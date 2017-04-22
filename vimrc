@@ -203,14 +203,14 @@ function! HasPaste()
 endfunction
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Valloric/YouCompleteMe'
-Plug 'jiangmiao/auto-pairs'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'nlknguyen/c-syntax.vim'
-Plug 'davidhalter/jedi-vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'Valloric/YouCompleteMe'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'nlknguyen/c-syntax.vim'
+    Plug 'davidhalter/jedi-vim'
 " On-demand loading
 call plug#end()
 
