@@ -1,4 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
+# Extended unique history
+setopt hist_ignore_dups share_history inc_append_history extended_history
 
 # You can change the theme with another one:
 #   https://github.com/robbyrussell/oh-my-zsh/wiki/themes
@@ -39,4 +41,7 @@ export PATH=$PATH:~/scripts
 export PATH=$PATH:~/bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+
+export PATH
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
