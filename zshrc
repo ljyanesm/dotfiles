@@ -45,3 +45,4 @@ eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 export PATH
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"

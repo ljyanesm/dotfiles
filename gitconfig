@@ -49,6 +49,6 @@
   mergeoptions = --no-edit
 [user]
 	email = yanes.luis@gmail.com
-	name = Luis
+	name = Luis Yanes
 [merge]
 	tool = opendiff
