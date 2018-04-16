@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 # Extended unique history
-setopt hist_ignore_dups share_history inc_append_history extended_history
+setopt hist_ignore_dups share_history inc_append_history extended_history append_history hist_expire_dups_first
 
 # You can change the theme with another one:
 #   https://github.com/robbyrussell/oh-my-zsh/wiki/themes
@@ -28,21 +28,32 @@ export PATH="./bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-#export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+export BUNDLER_EDITOR="'vim'" #"'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 
 export WORKON_HOME=~/Envs
 mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 
-workon default
 export PATH=$PATH:/Applications/CMake.app/Contents/bin
 export PATH=$PATH:~/scripts
 export PATH=$PATH:~/bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
-export PATH
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+PATH="/Users/yanesl/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/yanesl/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/yanesl/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/yanesl/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/yanesl/perl5"; export PERL_MM_OPT;
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
