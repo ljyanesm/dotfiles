@@ -17,6 +17,22 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
+(setq my-packages
+      '(
+        org-plus-contrib
+        helm
+        ox-reveal
+        org-bullets
+        auto-complete
+        ispell
+        yasnippet
+        ))
+
+(cl-loop for p in my-packages
+           unless (package-installed-p p)
+           do (package-install p))
+
+
 (require 'helm-config)
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -35,12 +51,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote ()))
+ '(custom-enabled-themes (quote nil))
  '(delete-selection-mode nil)
  '(inhibit-startup-screen t)
  '(ispell-dictionary "en_GB")
  '(org-html-inline-images t)
  '(org-html-table-caption-above nil)
+ '(package-selected-packages
+   (quote
+    (yasnippet auto-complete ox-reveal org-plus-contrib org-bullets helm)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
