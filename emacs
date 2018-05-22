@@ -20,7 +20,7 @@
 
 (setq my-packages
       '(
-        org
+        org-plus-contrib
         helm
         ox-reveal
         org-bullets
